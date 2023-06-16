@@ -1,4 +1,4 @@
-### Centre of Metaverse
+Centre of Metaverse
 
 # Turbo Tracks
 
@@ -21,7 +21,7 @@ Turbo Tracks is an exciting and fast-paced mobile game inspired by the popular S
 To run Turbo Tracks on your local machine, follow these steps:
 
 1. Clone the repository:
-```git clone https://github.com/your-username/Turbo-Tracks.git```
+```git clone https://github.com/priyanshusaini105/Turbo-Tracks.git```
 
 2. Open the project in Unity:
 - Open Unity Hub.
