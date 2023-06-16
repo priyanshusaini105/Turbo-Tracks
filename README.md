@@ -1,23 +1,23 @@
-# Centre of Metaverse
+### Centre of Metaverse
 
-## Turbo Tracks
+# Turbo Tracks
 
 Tech-Stack: Unity + C#
 
-### Overview
+## Overview
 Turbo Tracks is an exciting and fast-paced mobile game inspired by the popular Subway Surfers franchise. In this thrilling adventure, players will embark on an endless running experience through vibrant and dynamic urban environments.
 
-### Game Features
+## Game Features
 - **Endless Running:** Players will navigate through a continuous track filled with various obstacles, challenges, and opportunities for high-speed maneuvers.
 - **Obstacles:** Players will encounter a diverse range of obstacles such as barriers, oncoming trains, construction sites, and more, requiring quick reflexes and precise timing to avoid collisions.
 - **Collectibles:** Throughout the game, players can collect power-ups, coins, or other items that enhance their abilities, boost their scores, or unlock additional features.
 - **Score System:** The game includes a scoring mechanism to track players' progress and challenge them to achieve higher scores with each run.
 
-### Additional Features
+## Additional Features
 - **Leaderboards:** Players can compete with others and strive for the top ranks on the global leaderboard.
 - **Customization:** Players have the ability to personalize their characters through various customization options.
 
-### Installation
+## Installation
 To run Turbo Tracks on your local machine, follow these steps:
 
 1. Clone the repository:
@@ -33,7 +33,7 @@ To run Turbo Tracks on your local machine, follow these steps:
 - Build the project.
 - Run the built application on your target platform.
 
-### Requirements
+## Requirements
 To run Turbo Tracks, ensure that you have the following:
 
 - Unity (version 202X.X.X or higher)
