@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8336144528086062264}
   - component: {fileID: 6150076656505621696}
   - component: {fileID: 3709464639917113878}
-  - component: {fileID: 6898085756805325688}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -107,17 +106,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &6898085756805325688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8265184901269557298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5b57d2e2407fd4eada29db6fa99881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadPlaneLength: 10
-  roadPlanePrefab: {fileID: 8265184901269557298}
