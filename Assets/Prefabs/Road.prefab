@@ -120,3 +120,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roadPlaneLength: 10
+  roadPlanePrefab: {fileID: 8265184901269557298}

@@ -4,31 +4,35 @@ using UnityEngine;
 
 public class StreetController : MonoBehaviour
 {
-    public float roadPlaneLength = 10f;
-    // Start is called before the first frame update
-    void Start()
+    public float roadPlaneLength = 100f;
+    public GameObject roadPlanePrefab;
+
+    private GameObject player;
+    private bool isRoadPlaneSpawned = false;
+
+    private void Start()
     {
-        
+        player = GameObject.Find("Player");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
-    }
-
-    // spwan the next tile while player enters the current tile
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        if (!isRoadPlaneSpawned)
         {
-            Debug.Log("Player entered the tile");
-            // spawn the next tile
-            Vector3 spawnPos = new Vector3(0f, 0f, transform.position.z + roadPlaneLength);
-            Instantiate(gameObject, spawnPos, Quaternion.identity);
-            // destroy the current tile
-            Destroy(gameObject);
+            SpawnNextRoadPlane();
         }
     }
 
+    private void SpawnNextRoadPlane()
+    {
+        float playerZ = player.transform.position.z;
+        float roadPlaneZ = transform.position.z;
+        
+        if (playerZ > roadPlaneZ)
+        {
+            Vector3 nextRoadPlanePosition = new Vector3(0, 0, roadPlaneZ + roadPlaneLength);
+            Instantiate(roadPlanePrefab, nextRoadPlanePosition, Quaternion.identity);
+            isRoadPlaneSpawned = true;
+        }
+    }
 }
