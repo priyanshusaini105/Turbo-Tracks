@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public int currentLane = 1;
     public float laneDistance = 4f;
+    public float jumpForce = 5f;
 
     private Rigidbody rb;
 
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
         else if (SwipeInput.swipedUp)
         {
             Debug.Log("Swiped up");
+            Jump();
         }
         else if (SwipeInput.swipedDown)
         {
@@ -55,5 +57,10 @@ public class PlayerController : MonoBehaviour
         // move to lane
         rb.position = new Vector3(x, rb.position.y, rb.position.z);
         currentLane = lane;
+    }
+
+    // jump handle
+    private void Jump(){
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }
