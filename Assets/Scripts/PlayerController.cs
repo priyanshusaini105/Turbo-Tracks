@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 5f;
 
     private Rigidbody rb;
+    private bool hasJumped = false;
 
     private void Start()
     {
@@ -32,7 +33,8 @@ public class PlayerController : MonoBehaviour
         else if (SwipeInput.swipedUp)
         {
             Debug.Log("Swiped up");
-            Jump();
+            if (!hasJumped)
+                Jump();
         }
         else if (SwipeInput.swipedDown)
         {
@@ -59,8 +61,17 @@ public class PlayerController : MonoBehaviour
         currentLane = lane;
     }
 
-    // jump handle
-    private void Jump(){
+    private void Jump()
+    {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        hasJumped = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            hasJumped = false;
+        }
     }
 }
