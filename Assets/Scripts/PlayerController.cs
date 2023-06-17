@@ -3,43 +3,57 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public int currentLane = 1;
+    public float laneDistance = 4f;
 
     private Rigidbody rb;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         MoveForward();
     }
 
-    void Update()
+    private void Update()
     {
         if (SwipeInput.swipedRight)
         {
-            Log("Swiped right");
+            Debug.Log("Swiped right");
+            if (currentLane < 2)
+                MoveToLane(currentLane + 1);
         }
         else if (SwipeInput.swipedLeft)
         {
-            Log("Swiped left");
+            Debug.Log("Swiped left");
+            if (currentLane > 0)
+                MoveToLane(currentLane - 1);
         }
         else if (SwipeInput.swipedUp)
         {
-            Log("Swiped up");
+            Debug.Log("Swiped up");
         }
         else if (SwipeInput.swipedDown)
         {
-            Log("Swiped down");
+            Debug.Log("Swiped down");
         }
     }
 
-    void MoveForward()
+    private void MoveForward()
     {
         rb.velocity = new Vector3(0f, 0f, moveSpeed);
-        Log("Moving forward");
     }
 
-    void Log(string message)
+    private void MoveToLane(int lane)
     {
-        Debug.Log(message);
+        if (currentLane == lane)
+        {
+            Debug.Log("Already in lane " + lane);
+            return;
+        }
+        
+        float x = (lane - 1) * laneDistance;
+        // move to lane
+        rb.position = new Vector3(x, rb.position.y, rb.position.z);
+        currentLane = lane;
     }
 }
