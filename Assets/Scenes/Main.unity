@@ -459,7 +459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466776827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 161.4294, y: -140.86682, z: 101.578384}
+  m_LocalPosition: {x: 161.4294, y: 0, z: 101.578384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins:
-  - {fileID: 1004672874143319858, guid: 713646f4edae5e24fb600bdaaf73dcdb, type: 3}
+  - {fileID: 159903731408646843, guid: d090adbc1dc9b0441bab240d5a24654e, type: 3}
   playerTransform: {fileID: 2030950715}
   spawnZ: 10
   safeZone: 20

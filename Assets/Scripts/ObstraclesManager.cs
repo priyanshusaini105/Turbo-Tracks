@@ -40,7 +40,7 @@ public class ObstaclesManager : MonoBehaviour
         GameObject obstacle;
         obstacle = Instantiate(obstacles[RandomPrefabIndex()]) as GameObject;
         obstacle.transform.SetParent(transform);
-        obstacle.transform.position = new Vector3(Random.Range(-spawnX, spawnX), 0.5f, spawnZ);
+        obstacle.transform.position = new Vector3(Random.Range(-spawnX, spawnX), 0.406f, spawnZ);
         spawnZ += obstacleLength;
         activeObstacles.Add(obstacle);
     }

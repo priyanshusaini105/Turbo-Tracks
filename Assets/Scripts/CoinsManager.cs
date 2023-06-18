@@ -12,6 +12,8 @@ public class CoinsManager : MonoBehaviour
     public float coinLength = 10f;
     public float spawnX = 4f;
 
+    private int coinsCount = 0;
+
     private List<GameObject> activeCoins;
 
     // Start is called before the first frame update
@@ -40,7 +42,7 @@ public class CoinsManager : MonoBehaviour
         GameObject coin;
         coin = Instantiate(coins[RandomPrefabIndex()]) as GameObject;
         coin.transform.SetParent(transform);
-        coin.transform.position = new Vector3(Random.Range(-spawnX, spawnX), 0.5f, spawnZ);
+        coin.transform.position = new Vector3(Random.Range(-spawnX, spawnX), 1.2f, spawnZ);
         spawnZ += coinLength;
         activeCoins.Add(coin);
     }
@@ -60,4 +62,20 @@ public class CoinsManager : MonoBehaviour
 
         return randomIndex;
     }
+
+     public void AddCoin(){
+        coinsCount++;
+     }
+
+    public int GetCoinsCount(){
+        return coinsCount;
+    }
+
+    public void ResetCoinsCount(){
+        coinsCount = 0;
+    }
+    public void SetCoinsCount(int count){
+        coinsCount = count;
+    }
+
 }
