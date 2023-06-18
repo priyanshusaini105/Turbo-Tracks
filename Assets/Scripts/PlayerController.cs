@@ -9,12 +9,15 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private bool hasJumped = false;
-    private CharacterController controller;
+    // private CharacterController controller;
+    private PlayerAnimationController playerAnimationController;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        controller = GetComponent<CharacterController>();
+        // controller = GetComponent<CharacterController>();
+        playerAnimationController = GetComponent<PlayerAnimationController>();
+
         MoveForward();
     }
 
@@ -35,8 +38,10 @@ public class PlayerController : MonoBehaviour
         else if (SwipeInput.swipedUp)
         {
             Debug.Log("Swiped up");
-            if (!hasJumped)
+            if (!hasJumped){
+                playerAnimationController.Jump();
                 Jump();
+            }
         }
         else if (SwipeInput.swipedDown)
         {
@@ -44,12 +49,12 @@ public class PlayerController : MonoBehaviour
         }
 
         // if grounded set hasJumped to false
-        if (controller.isGrounded)
-        {
-            hasJumped = false;
-        }
+        // if (controller.isGrounded)
+        // {
+        //     hasJumped = false;
+        // }
 
-        Debug.Log(controller.isGrounded);
+        // Debug.Log(controller.isGrounded);
     }
 
     private void MoveForward()

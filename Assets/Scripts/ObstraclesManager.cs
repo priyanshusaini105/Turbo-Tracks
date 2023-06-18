@@ -39,7 +39,9 @@ public class ObstraclesManager : MonoBehaviour
         // desroy the prevoius obsrcale and genrate new one
         if (player.transform.position.z - lastObstracleSpawnZ > obstracleSpawnDistance)
         {
-            Destroy(currentObstracle);
+            if(currentObstracle != null)
+                Destroy(currentObstracle);
+                
             int randomObstracle = Random.Range(0, obstracles.Length);
             currentObstracle = Instantiate(obstracles[randomObstracle]);
             currentObstracle.transform.position = new Vector3(obstracleSpawnX, obstracleSpawnHeight, player.transform.position.z + obstracleSpawnDistance);
