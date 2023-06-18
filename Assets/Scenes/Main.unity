@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 2030950715}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
@@ -525,11 +525,11 @@ MonoBehaviour:
   - {fileID: 2551759207985870767, guid: 2a3938a7dc8afd14c8a1c444ed19fab4, type: 3}
   - {fileID: 881013282784117178, guid: e7dd64b494bb6134ca762a9605578415, type: 3}
   playerTransform: {fileID: 2030950715}
-  spawnZ: 0
+  spawnZ: 10
   safeZone: 20
   obstaclesOnScreen: 5
   obstacleLength: 10
-  spawnX: 4
+  spawnX: 2.5
 --- !u!114 &1466776831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +675,10 @@ PrefabInstance:
     - target: {fileID: 2292992791747332605, guid: 21379c463c798b64282b739c08ff8176, type: 3}
       propertyPath: m_Name
       value: character
+      objectReference: {fileID: 0}
+    - target: {fileID: 7299005861663314127, guid: 21379c463c798b64282b739c08ff8176, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

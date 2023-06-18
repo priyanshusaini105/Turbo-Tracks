@@ -6,7 +6,7 @@ public class ObstaclesManager : MonoBehaviour
 {
     public GameObject[] obstacles;
     public Transform playerTransform;
-    public float spawnZ = 0f;
+    public float spawnZ = 10f;
     public float safeZone = 20f;
     public int obstaclesOnScreen = 5;
     public float obstacleLength = 10f;
@@ -68,6 +68,6 @@ public class ObstaclesManager : MonoBehaviour
 
     private int lastPrefabIndex = 0;
 
-    
+
 
 }

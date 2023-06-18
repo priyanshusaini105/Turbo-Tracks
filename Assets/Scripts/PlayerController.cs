@@ -82,4 +82,13 @@ public class PlayerController : MonoBehaviour
         hasJumped = true;
     }
 
+    // set jump to false
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            hasJumped = false;
+        }
+    }
+
 }

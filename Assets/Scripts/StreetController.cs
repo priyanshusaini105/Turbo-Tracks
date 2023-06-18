@@ -15,8 +15,8 @@ public class StreetController : MonoBehaviour
     private void Start()
     {
         // Instantiate the initial road plane
-        currentRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0,7.43,0), Quaternion.identity);
-        nextRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0, 7.43, roadPlaneLength), Quaternion.identity);
+        currentRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0,7.43f,0), Quaternion.identity);
+        nextRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0, 7.43f, roadPlaneLength), Quaternion.identity);
     }
 
     private void Update()
@@ -31,7 +31,7 @@ public class StreetController : MonoBehaviour
         {
             Destroy(currentRoadPlane);
             currentRoadPlane = nextRoadPlane;
-            nextRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0, 7.43, currentRoadPlane.transform.position.z + roadPlaneLength), Quaternion.identity);
+            nextRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0, 7.43f, currentRoadPlane.transform.position.z + roadPlaneLength), Quaternion.identity);
             isRoadPlaneSpawned = true;
         }
     }
