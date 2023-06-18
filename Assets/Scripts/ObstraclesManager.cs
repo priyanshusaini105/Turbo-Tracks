@@ -2,51 +2,72 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstraclesManager : MonoBehaviour
+public class ObstaclesManager : MonoBehaviour
 {
-    public GameObject[] obstracles;
-    public float obstracleSpawnDistance = 10f;
-    public float obstracleSpawnHeight = 0f;
-    public float laneDistance = 4f;
-    public float obstracleSpawnX = 0f;
-    public GameObject currentObstracle;
+    public GameObject[] obstacles;
+    public Transform playerTransform;
+    public float spawnZ = 0f;
+    public float safeZone = 20f;
+    public int obstaclesOnScreen = 5;
+    public float obstacleLength = 10f;
+    public float spawnX = 4f;
 
-    private GameObject player;
-    private float lastObstracleSpawnZ = 0f;
-
+    private List<GameObject> activeObstacles;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
-        lastObstracleSpawnZ = player.transform.position.z;
-        obstracleSpawnX = obstracles[0].transform.position.x;     
+        activeObstacles = new List<GameObject>();
+
+        for (int i = 0; i < obstaclesOnScreen; i++)
+        {
+            SpawnObstacle();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void FixedUpdate()
-    {
-        SpawnObstracles();
-    }
-
-    private void SpawnObstracles()
-    {
-        // desroy the prevoius obsrcale and genrate new one
-        if (player.transform.position.z - lastObstracleSpawnZ > obstracleSpawnDistance)
+        if (playerTransform.position.z - safeZone > (spawnZ - obstaclesOnScreen * obstacleLength))
         {
-            if(currentObstracle != null)
-                Destroy(currentObstracle);
-                
-            int randomObstracle = Random.Range(0, obstracles.Length);
-            currentObstracle = Instantiate(obstracles[randomObstracle]);
-            currentObstracle.transform.position = new Vector3(obstracleSpawnX, obstracleSpawnHeight, player.transform.position.z + obstracleSpawnDistance);
-            lastObstracleSpawnZ = player.transform.position.z;
+            SpawnObstacle();
+            DeleteObstacle();
         }
     }
+
+    private void SpawnObstacle(int prefabIndex = -1)
+    {
+        GameObject obstacle;
+        obstacle = Instantiate(obstacles[RandomPrefabIndex()]) as GameObject;
+        obstacle.transform.SetParent(transform);
+        obstacle.transform.position = new Vector3(Random.Range(-spawnX, spawnX), 0.5f, spawnZ);
+        spawnZ += obstacleLength;
+        activeObstacles.Add(obstacle);
+    }
+
+    private void DeleteObstacle()
+    {
+        Destroy(activeObstacles[0]);
+        activeObstacles.RemoveAt(0);
+    }
+
+    private int RandomPrefabIndex()
+    {
+        if (obstacles.Length <= 1)
+            return 0;
+
+        int randomIndex = lastPrefabIndex;
+        while (randomIndex == lastPrefabIndex)
+        {
+            randomIndex = Random.Range(0, obstacles.Length);
+        }
+
+        lastPrefabIndex = randomIndex;
+        return randomIndex;
+    }
+
+    private int lastPrefabIndex = 0;
+
+    
 
 }
