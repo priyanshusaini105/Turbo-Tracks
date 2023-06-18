@@ -594,9 +594,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roadPlaneLength: 100
-  roadPlanePrefab: {fileID: 8265184901269557298, guid: ff9710ec01f819249a4db4ce4d9c57a9, type: 3}
-  currentRoadPlane: {fileID: 8265184901269557298, guid: ff9710ec01f819249a4db4ce4d9c57a9, type: 3}
-  nextRoadPlane: {fileID: 8265184901269557298, guid: ff9710ec01f819249a4db4ce4d9c57a9, type: 3}
+  roadPlanePrefab: {fileID: 8652043080702013541, guid: 7ad64a1741353414990f1046323c2385, type: 3}
+  currentRoadPlane: {fileID: 8652043080702013541, guid: 7ad64a1741353414990f1046323c2385, type: 3}
+  nextRoadPlane: {fileID: 8652043080702013541, guid: 7ad64a1741353414990f1046323c2385, type: 3}
 --- !u!4 &1466776829
 Transform:
   m_ObjectHideFlags: 0
