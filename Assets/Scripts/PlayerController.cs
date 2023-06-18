@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private bool hasJumped = false;
+    private CharacterController controller;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
         MoveForward();
     }
 
@@ -40,6 +42,14 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Swiped down");
         }
+
+        // if grounded set hasJumped to false
+        if (controller.isGrounded)
+        {
+            hasJumped = false;
+        }
+
+        Debug.Log(controller.isGrounded);
     }
 
     private void MoveForward()
@@ -67,11 +77,4 @@ public class PlayerController : MonoBehaviour
         hasJumped = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Road"))
-        {
-            hasJumped = false;
-        }
-    }
 }
