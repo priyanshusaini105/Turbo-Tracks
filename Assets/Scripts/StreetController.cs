@@ -9,15 +9,14 @@ public class StreetController : MonoBehaviour
     public GameObject currentRoadPlane;
     public GameObject nextRoadPlane;
 
-    private GameObject player;
-    // private bool isRoadPlaneSpawned = false;
+    public GameObject player;
+    private bool isRoadPlaneSpawned = false;
 
     private void Start()
     {
-        player = GameObject.Find("Player");
         // Instantiate the initial road plane
-        currentRoadPlane = Instantiate(roadPlanePrefab, Vector3.zero, Quaternion.identity);
-        nextRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0, 0, roadPlaneLength), Quaternion.identity);
+        currentRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0,7.43f,0), Quaternion.identity);
+        nextRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0, 7.43f, roadPlaneLength), Quaternion.identity);
     }
 
     private void Update()
@@ -27,12 +26,13 @@ public class StreetController : MonoBehaviour
 
     private void SpawnNextRoadPlane()
     {
+        // Debug.Log("Player position: " + player.transform.position.z + " Next road plane position: " + nextRoadPlane.transform.position.z);
         if (nextRoadPlane != null && player != null && player.transform.position.z >= nextRoadPlane.transform.position.z-roadPlaneLength/2 )
         {
             Destroy(currentRoadPlane);
             currentRoadPlane = nextRoadPlane;
-            nextRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0, 0, currentRoadPlane.transform.position.z + roadPlaneLength), Quaternion.identity);
-            // isRoadPlaneSpawned = true;
+            nextRoadPlane = Instantiate(roadPlanePrefab, new Vector3(0, 7.43f, currentRoadPlane.transform.position.z + roadPlaneLength), Quaternion.identity);
+            isRoadPlaneSpawned = true;
         }
     }
 }
