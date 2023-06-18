@@ -573,6 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1466776829}
   - component: {fileID: 1466776828}
+  - component: {fileID: 1466776830}
   m_Layer: 0
   m_Name: RoadController
   m_TagString: Untagged
@@ -611,6 +612,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1466776830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466776827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4507aed1959dfc04eb4b2d5d03c857e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstracles:
+  - {fileID: 2551759207985870767, guid: 2a3938a7dc8afd14c8a1c444ed19fab4, type: 3}
+  - {fileID: 881013282784117178, guid: e7dd64b494bb6134ca762a9605578415, type: 3}
+  obstracleSpawnDistance: 10
+  obstracleSpawnHeight: 0
+  laneDistance: 4
+  obstracleSpawnX: 0
 --- !u!1 &1658009015
 GameObject:
   m_ObjectHideFlags: 3
@@ -758,7 +778,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
