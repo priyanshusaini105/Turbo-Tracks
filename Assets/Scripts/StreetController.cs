@@ -26,7 +26,7 @@ public class StreetController : MonoBehaviour
 
     private void SpawnNextRoadPlane()
     {
-        Debug.Log("Player position: " + player.transform.position.z + " Next road plane position: " + nextRoadPlane.transform.position.z);
+        // Debug.Log("Player position: " + player.transform.position.z + " Next road plane position: " + nextRoadPlane.transform.position.z);
         if (nextRoadPlane != null && player != null && player.transform.position.z >= nextRoadPlane.transform.position.z-roadPlaneLength/2 )
         {
             Destroy(currentRoadPlane);

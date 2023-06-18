@@ -9,7 +9,6 @@ public class PlayerAnimationController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        Run();
     }
 
     // Update is called once per frame
@@ -54,5 +53,10 @@ public class PlayerAnimationController : MonoBehaviour
     public void Run()
     {
         animator.SetBool("isRunning", true);
+    }
+
+    public bool GetIsRunnig()
+    {
+        return animator.GetBool("isRunning");
     }
 }

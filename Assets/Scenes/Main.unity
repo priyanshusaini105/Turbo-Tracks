@@ -469,8 +469,9 @@ GameObject:
   - component: {fileID: 1466776829}
   - component: {fileID: 1466776828}
   - component: {fileID: 1466776830}
+  - component: {fileID: 1466776831}
   m_Layer: 0
-  m_Name: RoadController
+  m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,6 +530,19 @@ MonoBehaviour:
   obstaclesOnScreen: 5
   obstacleLength: 10
   spawnX: 4
+--- !u!114 &1466776831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466776827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be8ed6e064a4e548a0d01d293da8e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2030950713}
 --- !u!1 &1594347402 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4486364448630060164, guid: 4085247b4b3e2c14f92ddee40c6b8306, type: 3}
@@ -688,7 +702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   currentLane: 1
-  laneDistance: 4
+  laneDistance: 2.5
   jumpForce: 5
 --- !u!54 &2030950718
 Rigidbody:
@@ -715,7 +729,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 114
   m_CollisionDetection: 0
 --- !u!136 &2030950719
 CapsuleCollider:
@@ -795,6 +809,10 @@ PrefabInstance:
     - target: {fileID: 1484367528193020743, guid: 4085247b4b3e2c14f92ddee40c6b8306, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709811870828610833, guid: 4085247b4b3e2c14f92ddee40c6b8306, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1757841286239610777, guid: 4085247b4b3e2c14f92ddee40c6b8306, type: 3}
       propertyPath: m_IsActive
