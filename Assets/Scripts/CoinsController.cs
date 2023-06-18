@@ -10,7 +10,7 @@ public class coinsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coinsManager = FindObjectOfType<CoinsManager>();        
+        coinsManager = FindObjectOfType<CoinsManager>();      
     }
 
     // Update is called once per frame
@@ -20,11 +20,11 @@ public class coinsController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+                Debug.Log(other.gameObject.tag);
             if (other.gameObject.tag == "Player")
             {
                 coinsManager.AddCoin();
-            Debug.Log(coinsManager.GetCoinsCount());
-            Destroy(gameObject);
+                Destroy(gameObject);
             }
     }
 }
