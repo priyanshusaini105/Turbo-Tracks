@@ -90,6 +90,10 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public void LoadScene(string sceneName){
+        SceneManager.LoadScene(sceneName);
+    }
+
 
     public void GameOver(){
         // isGameOver = true;
