@@ -9,10 +9,14 @@ public class GameController : MonoBehaviour
     public GameObject player;
     public GameObject gameOverPanel;
     private int totalCoins = 0;
+    private CoinsManager coinsManager;
+    private int thisGameCoins = 0;
 
     private void Start()
     {
+        coinsManager = FindObjectOfType<CoinsManager>();
         totalCoins = PlayerPrefs.GetInt("TotalCoins", 0);
+        Debug.Log("Total Coins: " + totalCoins);
     }
 
     void Update()
@@ -43,9 +47,10 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("Game Over");
         if (gameOverPanel != null)
         {
+            thisGameCoins = coinsManager.GetCoinsCount();
+            PlayerPrefs.SetInt("TotalCoins", totalCoins + thisGameCoins);
             gameOverPanel.SetActive(true);
             gameOverPanel.GetComponent<Animator>().Play("GameOverAnimation");
         }

@@ -22,7 +22,6 @@ public class AudioSlider : MonoBehaviour
         {
             case AudioMixMode.LinearAudioSourceVolume:
                 AudioSource.volume = Value;
-                Debug.Log("LinearAudioSourceVolume");
                 break;
             case AudioMixMode.LinearMixerVolume:
                 Mixer.SetFloat("Volume", (-80 + Value * 80));
