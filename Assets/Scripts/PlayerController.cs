@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         // controller = GetComponent<CharacterController>();
         playerAnimationController = GetComponent<PlayerAnimationController>();
-
+        playerAnimationController.Run();
         MoveForward();
     }
 
@@ -47,7 +47,14 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Swiped down");
         }
-
+        if(hasJumped)
+        {
+            playerAnimationController.Jump();
+        }
+        // else
+        // {
+        //     playerAnimationController.Run();
+        // }
         // if grounded set hasJumped to false
         // if (controller.isGrounded)
         // {
@@ -88,6 +95,13 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             hasJumped = false;
+            playerAnimationController.Run();
+        }
+        Debug.Log("Collided with " + other.gameObject.tag);
+        if (other.gameObject.CompareTag("Obstacles"))
+        {
+            Debug.Log("Game over");
+            FindObjectOfType<GameController>().GameOver();
         }
     }
 

@@ -10,7 +10,7 @@ public class ObstaclesManager : MonoBehaviour
     public float safeZone = 20f;
     public int obstaclesOnScreen = 5;
     public float obstacleLength = 10f;
-    public float spawnX = 4f;
+    public float laneDistance = 2.5f;
 
     private List<GameObject> activeObstacles;
 
@@ -40,7 +40,10 @@ public class ObstaclesManager : MonoBehaviour
         GameObject obstacle;
         obstacle = Instantiate(obstacles[RandomPrefabIndex()]) as GameObject;
         obstacle.transform.SetParent(transform);
-        obstacle.transform.position = new Vector3(Random.Range(-spawnX, spawnX), 0.406f, spawnZ);
+        int randomLane = Random.Range(0, 3);
+        float x = (randomLane - 1) * laneDistance;
+
+        obstacle.transform.position = new Vector3(x, 0.406f, spawnZ);
         spawnZ += obstacleLength;
         activeObstacles.Add(obstacle);
     }

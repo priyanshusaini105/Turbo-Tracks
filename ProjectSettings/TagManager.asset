@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Obstacles
   - Coin
+  - GameOverPanel
+  - CoinsText
   layers:
   - Default
   - TransparentFX
