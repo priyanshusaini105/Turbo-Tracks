@@ -85,7 +85,6 @@ public class PlayerController : MonoBehaviour
     // set jump to false
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collision with " + other.gameObject.tag);
         if (other.gameObject.CompareTag("Ground"))
         {
             hasJumped = false;

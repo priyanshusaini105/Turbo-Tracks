@@ -459,7 +459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466776827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 161.4294, y: -140.86682, z: 101.578384}
+  m_LocalPosition: {x: 161.4294, y: 0, z: 101.578384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -526,13 +526,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins:
-  - {fileID: 1004672874143319858, guid: 713646f4edae5e24fb600bdaaf73dcdb, type: 3}
+  - {fileID: 159903731408646843, guid: d090adbc1dc9b0441bab240d5a24654e, type: 3}
   playerTransform: {fileID: 2030950715}
   spawnZ: 10
   safeZone: 20
   coinsOnScreen: 5
   coinLength: 10
-  spawnX: 4
+  laneDistance: 2.5
 --- !u!1 &1658009015
 GameObject:
   m_ObjectHideFlags: 3
@@ -669,6 +669,10 @@ PrefabInstance:
     - target: {fileID: 7299005861663314127, guid: 21379c463c798b64282b739c08ff8176, type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172486107218071785, guid: 21379c463c798b64282b739c08ff8176, type: 3}
+      propertyPath: moveSpeed
+      value: 10.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

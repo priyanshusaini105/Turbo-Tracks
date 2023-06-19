@@ -753,7 +753,7 @@ Transform:
   - {fileID: 1928085726629222454}
   - {fileID: 6397885176749208531}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6354680758729726991
 Animator:
@@ -1923,7 +1923,7 @@ GameObject:
   - component: {fileID: 7707376436924286030}
   m_Layer: 0
   m_Name: Boy01_Body_Geo
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1963,7 +1963,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8694962402994988301, guid: 418d006907e4314468112dd1f825638c, type: 3}
+  - {fileID: 2100000, guid: c646fcb3f9f0adf4dbf812deee63955b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
