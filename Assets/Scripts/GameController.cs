@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -58,6 +59,37 @@ public class GameController : MonoBehaviour
     {
         // Debug.Log(playerAnimationController.GetIsRunnig());
     }
+
+    // public void Jump(){
+    //     playerAnimationController.Jump();
+    // }
+
+    // public void Slide(){
+    //     playerAnimationController.Slide();
+    // }
+
+    // public void MoveToLane(int lane){
+    //     playerAnimationController.MoveToLane(lane);
+    // }
+
+    // public void MoveForward(){
+    //     playerAnimationController.Run();
+    // }
+    public void Play(){
+        // isGameStarted = true;
+        // startPanel.SetActive(false);
+        // scorePanel.SetActive(true);
+        // scoreText.SetActive(true);
+        // highScoreText.SetActive(true);
+        // scoreText.GetComponent<UnityEngine.UI.Text>().text = "Score: " + score.ToString("0");
+        // highScoreText.GetComponent<UnityEngine.UI.Text>().text = "High Score: " + highScore.ToString("0");
+        // Time.timeScale = 1;
+        // streetController.StartMoving();
+        // obstaclesManager.StartSpawning();
+        // playerAnimationController.Run();
+        SceneManager.LoadScene("Game");
+    }
+
 
     public void GameOver(){
         // isGameOver = true;
