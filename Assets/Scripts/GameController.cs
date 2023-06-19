@@ -87,7 +87,7 @@ public class GameController : MonoBehaviour
         // streetController.StartMoving();
         // obstaclesManager.StartSpawning();
         // playerAnimationController.Run();
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Main");
     }
 
     public void LoadScene(string sceneName){
