@@ -49,8 +49,8 @@ public class GameController : MonoBehaviour
         // highScoreText.GetComponent<UnityEngine.UI.Text>().text = "High Score: " + highScore.ToString("0");
         // highScoreTextGameOver.GetComponent<UnityEngine.UI.Text>().text = "High Score: " + highScore.ToString("0");
         // highScoreTextVictory.GetComponent<UnityEngine.UI.Text>().text = "High Score: " + highScore.ToString("0");
-    
-        playerAnimationController = player.GetComponent<PlayerAnimationController>();
+        if(player!=null)
+            playerAnimationController = player.GetComponent<PlayerAnimationController>();
         playerAnimationController.Run();
         totalCoins=PlayerPrefs.GetInt("TotalCoins",0);
     }
