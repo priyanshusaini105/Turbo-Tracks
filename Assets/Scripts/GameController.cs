@@ -12,10 +12,6 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        if (player != null)
-            playerAnimationController = player.GetComponent<PlayerAnimationController>();
-
-        playerAnimationController.Run();
         totalCoins = PlayerPrefs.GetInt("TotalCoins", 0);
     }
 
