@@ -10,7 +10,7 @@ public class CoinsManager : MonoBehaviour
     public float safeZone = 20f;
     public int coinsOnScreen = 5;
     public float coinLength = 10f;
-    public float spawnX = 4f;
+    public float laneDistance = 2.5f;
 
     private int coinsCount = 0;
 
@@ -42,7 +42,11 @@ public class CoinsManager : MonoBehaviour
         GameObject coin;
         coin = Instantiate(coins[RandomPrefabIndex()]) as GameObject;
         coin.transform.SetParent(transform);
-        coin.transform.position = new Vector3(Random.Range(-spawnX, spawnX), 1.2f, spawnZ);
+        // position on the one of  the 3 lanes
+        int lane = Random.Range(0, 3);
+        float x=(lane-1)*laneDistance;
+        coin.transform.position = new Vector3(x, 1.2f, spawnZ);
+
         spawnZ += coinLength;
         activeCoins.Add(coin);
     }

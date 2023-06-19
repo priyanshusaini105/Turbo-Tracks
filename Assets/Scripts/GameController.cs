@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
 
     // private float score = 0f;
     // private float highScore = 0f;
+    private int totalCoins=0;
 
     private void Start()
     {
@@ -50,10 +51,25 @@ public class GameController : MonoBehaviour
     
         playerAnimationController = player.GetComponent<PlayerAnimationController>();
         playerAnimationController.Run();
+        totalCoins=PlayerPrefs.GetInt("TotalCoins",0);
     }
     // Update is called once per frame
     void Update()
     {
         // Debug.Log(playerAnimationController.GetIsRunnig());
+    }
+
+    public void GameOver(){
+        // isGameOver = true;
+        // gameOverPanel.SetActive(true);
+        // scoreTextGameOver.GetComponent<UnityEngine.UI.Text>().text = "Score: " + score.ToString("0");
+        // if (score > highScore)
+        // {
+        //     highScore = score;
+        //     PlayerPrefs.SetFloat("highScore", highScore);
+        //     highScoreTextGameOver.GetComponent<UnityEngine.UI.Text>().text = "High Score: " + highScore.ToString("0");
+        // }
+        Debug.Log("Game Over");
+        // PlayerPrefs.SetInt("TotalCoins",totalCoins+thisGameCoins);
     }
 }
