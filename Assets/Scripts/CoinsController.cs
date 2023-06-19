@@ -1,30 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class coinsController : MonoBehaviour
+public class CoinsController : MonoBehaviour
 {
-
     private CoinsManager coinsManager;
+    public TextMeshProUGUI coinsText;
 
-    // Start is called before the first frame update
     void Start()
     {
-        coinsManager = FindObjectOfType<CoinsManager>();      
+        coinsManager = FindObjectOfType<CoinsManager>();
+        coinsText = GameObject.FindGameObjectWithTag("CoinsText").GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    private void OnTriggerEnter(Collider other) {
-            if (other.gameObject.tag == "Player")
-            {
-                coinsManager.AddCoin();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            coinsManager.AddCoin();
+            coinsText.text = coinsManager.GetCoinsCount().ToString();
             Debug.Log(coinsManager.GetCoinsCount());
             Destroy(gameObject);
-            }
+        }
     }
 }

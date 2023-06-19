@@ -29,6 +29,16 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
