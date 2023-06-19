@@ -7,11 +7,11 @@ public class Obstacle:MonoBehaviour
         gameController=FindObjectOfType<GameController>();
     }
 
-    private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.tag == "Player")
-        {
-            gameController.GameOver();
-        }
-    }
+    // private void OnCollisionEnter(Collision other) {
+    //     if(other.gameObject.tag == "Player")
+    //     {
+    //         gameController.GameOver();
+    //     }
+    // }
 
 }

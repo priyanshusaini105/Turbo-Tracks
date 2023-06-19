@@ -89,6 +89,12 @@ public class PlayerController : MonoBehaviour
         {
             hasJumped = false;
         }
+        Debug.Log("Collided with " + other.gameObject.tag);
+        if (other.gameObject.CompareTag("Obstacles"))
+        {
+            Debug.Log("Game over");
+            FindObjectOfType<GameController>().GameOver();
+        }
     }
 
 }
