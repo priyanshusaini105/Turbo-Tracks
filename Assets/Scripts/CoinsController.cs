@@ -6,12 +6,16 @@ using TMPro;
 public class CoinsController : MonoBehaviour
 {
     private CoinsManager coinsManager;
-    public TextMeshProUGUI coinsText;
+    public GameObject soundObject;
+    private AudioSource sound;
+    // public TextMeshProUGUI coinsText;
 
     void Start()
     {
         coinsManager = FindObjectOfType<CoinsManager>();
-        coinsText = GameObject.FindGameObjectWithTag("CoinsText").GetComponent<TextMeshProUGUI>();
+        soundObject = GameObject.FindGameObjectWithTag("CoinSound");
+        sound = soundObject.GetComponent<AudioSource>();
+        // coinsText = GameObject.FindGameObjectWithTag("CoinsText").GetComponent<TextMeshProUGUI>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,8 +23,8 @@ public class CoinsController : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             coinsManager.AddCoin();
-            coinsText.text = coinsManager.GetCoinsCount().ToString();
-            Debug.Log(coinsManager.GetCoinsCount());
+            // coinsText.text = coinsManager.GetCoinsCount().ToString();
+            sound.Play();
             Destroy(gameObject);
         }
     }

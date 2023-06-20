@@ -14,6 +14,7 @@ public class SwipeInput : MonoBehaviour {
 	public static bool swipedLeft = false;
 	public static bool swipedUp = false;
 	public static bool swipedDown = false;
+	public static bool disableSwip = false;
 	
 	
 	public bool debugWithArrowKeys = true;
@@ -21,8 +22,15 @@ public class SwipeInput : MonoBehaviour {
 	Vector2 startPos;
 	float startTime;
 
+	void Start()
+	{
+		disableSwip = false;
+	}
+
 	public void Update()
 	{
+		if (disableSwip)
+			return;
 		swipedRight = false;
 		swipedLeft = false;
 		swipedUp = false;
@@ -73,5 +81,9 @@ public class SwipeInput : MonoBehaviour {
 			swipedRight = swipedRight || Input.GetKeyDown (KeyCode.RightArrow);
 			swipedLeft = swipedLeft || Input.GetKeyDown (KeyCode.LeftArrow);
 		}
+	}
+
+	public void IsDisableSwip(bool isDisable){
+		disableSwip = isDisable;
 	}
 }

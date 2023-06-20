@@ -4,23 +4,16 @@ using UnityEngine;
 using TMPro;
 
 
+
 public class CoinsScoreBoard : MonoBehaviour
 {
     // Start is called before the first frame update
-    private TMP_Text text;
-    private CoinsManager coinsManager;
+    private TextMeshProUGUI text;
 
 
     void Start()
     {
-        text=GetComponent<TMP_Text>();
-        coinsManager=FindObjectOfType<CoinsManager>();
-        text.text=coinsManager.GetCoinsCount().ToString();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        text=GetComponent<TextMeshProUGUI>();
+        text.text=PlayerPrefs.GetInt("TotalCoins",0).ToString();
     }
 }
