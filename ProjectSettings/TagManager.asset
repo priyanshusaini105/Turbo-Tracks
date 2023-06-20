@@ -11,6 +11,7 @@ TagManager:
   - GameOverPanel
   - CoinsText
   - CoinSound
+  - GameOverSound
   layers:
   - Default
   - TransparentFX

@@ -11,11 +11,15 @@ public class GameController : MonoBehaviour
     private int totalCoins = 0;
     private CoinsManager coinsManager;
     private int thisGameCoins = 0;
+    public GameObject gameOverSoundObject;
+    public AudioSource gameOverSoundSource;
 
     private void Start()
     {
         coinsManager = FindObjectOfType<CoinsManager>();
         totalCoins = PlayerPrefs.GetInt("TotalCoins", 0);
+        gameOverSoundObject= GameObject.FindGameObjectWithTag("GameOverSound");
+        gameOverSoundSource = gameOverSoundObject.GetComponent<AudioSource>();
         Debug.Log("Total Coins: " + totalCoins);
     }
 
@@ -49,6 +53,7 @@ public class GameController : MonoBehaviour
     {
         if (gameOverPanel != null)
         {
+            gameOverSoundSource.Play();
             thisGameCoins = coinsManager.GetCoinsCount();
             PlayerPrefs.SetInt("TotalCoins", totalCoins + thisGameCoins);
             gameOverPanel.SetActive(true);
