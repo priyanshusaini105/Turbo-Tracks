@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         
         float x = (lane - 1) * laneDistance;
         // move to lane
-        rb.position = new Vector3(x, rb.position.y, rb.position.z);
+        rb.transform.Translate(new Vector3(x - rb.transform.position.x, 0f, 0f));
         currentLane = lane;
     }
 
